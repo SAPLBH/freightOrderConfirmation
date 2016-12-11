@@ -4,8 +4,6 @@ package com.sap.lbh.util;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.servlet.ServletContext;
-
 
 import org.apache.cxf.jaxrs.servlet.CXFNonSpringJaxrsServlet;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
