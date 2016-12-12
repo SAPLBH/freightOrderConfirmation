@@ -33,6 +33,32 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
+	    <dependency>
+	        <groupId>org.springframework.cloud</groupId>
+	        <artifactId>spring-cloud-starter-config</artifactId>
+	    </dependency>
+	    <dependency>
+	        <groupId>org.springframework.cloud</groupId>
+	        <artifactId>spring-cloud-starter-eureka</artifactId>
+	    </dependency>		
+		 <dependency>
+		     <groupId>org.springframework.cloud</groupId>
+		     <artifactId>spring-cloud-cloudfoundry-connector</artifactId>
+		     <version>1.2.0.RELEASE</version>
+		  </dependency>
+		  <dependency>
+		     <groupId>org.springframework.cloud</groupId>
+		     <artifactId>spring-cloud-spring-service-connector</artifactId>
+		  </dependency>
+		  <dependency>
+		     <groupId>org.springframework.cloud</groupId>
+		     <artifactId>spring-cloud-core</artifactId>
+		  </dependency>
+		  <dependency>
+		     <groupId>com.sap.hana.cloud</groupId>
+		     <artifactId>spring-cloud-cloudfoundry-hana-service-connector</artifactId>
+		     <version>1.0.4.RELEASE</version>
+		  </dependency>		
 		<dependency>
 			<groupId>com.sap.lbh</groupId>
 			<artifactId>jpaBase</artifactId>
@@ -68,7 +94,18 @@
 			<artifactId>javax.servlet-api</artifactId>
 			<scope>provided</scope>
 		</dependency>
-
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+        <groupId>test</groupId>
+        <artifactId>ngdbc</artifactId>
+        <version>1.0</version>
+        <scope>system</scope>
+        <systemPath>C:\Users\I068605\Documents\workspace-sts-3.8.2.RELEASE\lib\ngdbc.jar</systemPath>
+    </dependency>
 	</dependencies>
 	<build>
 		<plugins>
@@ -80,9 +117,21 @@
 				      <goals>
 				        <goal>repackage</goal>
 				      </goals>
+				      <configuration>
+				      <includeSystemScope>true</includeSystemScope>
+				      </configuration>
 				    </execution>
 				  </executions>
 			</plugin>
+			<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-compiler-plugin</artifactId>
+    <version>3.1</version>
+    <configuration>
+        <source>1.8</source>
+        <target>1.8</target>
+    </configuration>
+</plugin>			
 		</plugins>
 		
 	</build>

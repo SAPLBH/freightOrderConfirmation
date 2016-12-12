@@ -23,7 +23,7 @@ public class SpringContextsUtil implements ApplicationContextAware {
 		logger.debug("Loading SpringContextsUtil");
 	}
 
-	
+	@Override
 	public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
 		logger.debug("Inject ApplicationContext: {} into SpringContextsUtil", applicationContext);
 		SpringContextsUtil.applicationContext = applicationContext;
